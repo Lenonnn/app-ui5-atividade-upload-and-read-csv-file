@@ -1,0 +1,94 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "MS_EXCEL_FILE_UPLOAD.MS_EXCEL_FILE_UPLOAD",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "MS_EXCEL_FILE_UPLOAD.MS_EXCEL_FILE_UPLOAD.view.fileUpLoad",
+			"type": "XML",
+			"async": true,
+			"id": "fileUpLoad"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "MS_EXCEL_FILE_UPLOAD.MS_EXCEL_FILE_UPLOAD.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "MS_EXCEL_FILE_UPLOAD.MS_EXCEL_FILE_UPLOAD.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"name": "RoutefileUpLoad",
+				"pattern": "RoutefileUpLoad",
+				"target": ["TargetfileUpLoad"]
+			}],
+			"targets": {
+				"TargetfileUpLoad": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "fileUpLoad",
+					"viewName": "fileUpLoad"
+				}
+			}
+		}
+	}
+}
